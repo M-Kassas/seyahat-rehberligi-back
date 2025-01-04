@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_PRISMA_URL")
+}
+
+model Kullanici {
+  id              Int             @id @unique @default(autoincrement())
+  ad              String
+  soyad           String
+  resim           String          @default("")
+  kullaniciadi    String          @unique
+  sifre           String
+  yonetici        Boolean         @default(false)
+}
+
+model Sehir {
+  id              Int             @id @unique @default(autoincrement())
+  ad              String
+  resim           String
+  video           String
+  ozellikler      SehirOzellilk[]
+}
+
+model SehirOzellilk {
+  id              Int             @id @unique @default(autoincrement())
+  ad              String
+  aciklama        String
+  resim           String
+  metin           String
+  sehirId         Int
+  sehir           Sehir           @relation(fields: [sehirId], references: [id])
+}
