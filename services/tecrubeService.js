@@ -26,12 +26,19 @@ async function getir(id) {
     where: {
       id,
     },
+    include: {
+      tecrubeBirimler: true,
+    }
   });
   return tecrube;
 }
 
 async function getirTum() {
-  const tecrubeler = await prisma.tecrube.findMany();
+  const tecrubeler = await prisma.tecrube.findMany({
+    include: {
+      tecrubeBirimler: true,
+    }
+  });
   return tecrubeler;
 }
 

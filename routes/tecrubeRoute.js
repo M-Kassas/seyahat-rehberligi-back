@@ -8,7 +8,7 @@ const tecrubeService = require("../services/tecrubeService");
 router.get("/:tecrubeId", async (req, res, next) => {
   try {
     const tecrubeId = parseInt(req.params.tecrubeId);
-    const tecrube = await tecrubeService.tecrube(tecrubeId);
+    const tecrube = await tecrubeService.getir(tecrubeId);
     res.json({
       tecrube,
     });

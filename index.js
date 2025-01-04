@@ -10,6 +10,7 @@ app.use(express.json({limit: '50mb'}));
 app.use('/kullanici', require('./routes/kullaniciRoute'));
 app.use('/sehir', require('./routes/sehirRoute'));
 app.use('/tecrube', require('./routes/tecrubeRoute'));
+app.use('/tecrubeBirimi', require('./routes/tecrubeBirimiRoute'));
 
 app.get("/", (req, res) => {
   res.json({status: "ok"}); 

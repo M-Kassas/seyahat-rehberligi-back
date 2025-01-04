@@ -40,4 +40,15 @@ model Tecrube {
   id                Int             @id @unique @default(autoincrement())
   ad                String
   resim             String
+  tecrubeBirimler   TecrubeBirimi[]
+}
+
+model TecrubeBirimi {
+  id                Int             @id @unique @default(autoincrement())
+  ad                String
+  resim             String
+  aciklama          String
+  metin             String
+  tecrubeId         Int
+  tecrube           Tecrube         @relation(fields: [tecrubeId], references: [id], onDelete: Cascade)
 }
