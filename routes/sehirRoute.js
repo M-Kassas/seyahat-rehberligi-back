@@ -80,6 +80,15 @@ router.patch('/:sehirId', async (req, res, next) => {
     if (!ad || !ad.trim()) throw new ApiError("ad boş olmaz.");
     if (!resim || !resim.trim()) throw new ApiError("resim boş olmaz.");
     if (!video || !video.trim()) throw new ApiError("video boş olmaz.");
+    if (!kesfedinResim || !kesfedinResim.trim()) throw new ApiError("keşfedin resim boş olmaz");
+    if (!kesfedinAciklama || !kesfedinAciklama.trim()) throw new ApiError("keşfedin açıklama boş olmaz");
+    if (!kesfedinMetin || !kesfedinMetin.trim()) throw new ApiError("keşfedin metin boş olmaz");
+    if (!hissetResim || !hissetResim.trim()) throw new ApiError("hisset Resim boş olmaz");
+    if (!hissetAciklama || !hissetAciklama.trim()) throw new ApiError("hisset açıklama boş olmaz");
+    if (!hissetMetin || !hissetMetin.trim()) throw new ApiError("hisset metin boş olmaz");
+    if (!lezzetResim || !lezzetResim.trim()) throw new ApiError("lezzet Resim boş olmaz");
+    if (!lezzetAciklama || !lezzetAciklama.trim()) throw new ApiError("lezzet açıklama boş olmaz");
+    if (!lezzetMetin || !lezzetMetin.trim()) throw new ApiError("lezzet metin boş olmaz");
 
     const guncelBilgiler = {};
     guncelBilgiler.ad = ad.trim();

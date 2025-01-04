@@ -35,3 +35,9 @@ model Sehir {
   lezzetAciklama    String
   lezzetMetin       String
 }
+
+model Tecrube {
+  id                Int             @id @unique @default(autoincrement())
+  ad                String
+  resim             String
+}
