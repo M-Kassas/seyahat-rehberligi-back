@@ -18,19 +18,20 @@ model Kullanici {
 }
 
 model Sehir {
-  id              Int             @id @unique @default(autoincrement())
-  ad              String
-  resim           String
-  video           String
-  ozellikler      SehirOzellilk[]
-}
+  id                Int             @id @unique @default(autoincrement())
+  ad                String
+  resim             String
+  video             String
 
-model SehirOzellilk {
-  id              Int             @id @unique @default(autoincrement())
-  ad              String
-  aciklama        String
-  resim           String
-  metin           String
-  sehirId         Int
-  sehir           Sehir           @relation(fields: [sehirId], references: [id])
+  kesfedinResim     String
+  kesfedinAciklama  String
+  kesfedinMetin     String
+
+  hissetResim       String
+  hissetAciklama    String
+  hissetMetin       String
+
+  lezzetResim       String
+  lezzetAciklama    String
+  lezzetMetin       String
 }
